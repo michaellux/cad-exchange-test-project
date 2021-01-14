@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 import {
   Grid, TextField, Button, Typography
 } from '@material-ui/core';
@@ -56,7 +57,7 @@ class Scene extends React.PureComponent {
                   new THREE.Vector3(triangle.conicalSurface.PiPlusOne['0'], triangle.conicalSurface.PiPlusOne['1'], triangle.conicalSurface.PiPlusOne['2'])
                 ];
                 return (
-                  <Triangle type="conicalSurface" vertices={conicalSurfaceVertices} />
+                  <Triangle key={_.uniqueId()} type="conicalSurface" vertices={conicalSurfaceVertices} />
                 );
               }) : ('Треугольников нет')
           }
@@ -70,7 +71,7 @@ class Scene extends React.PureComponent {
                   new THREE.Vector3(triangle.base.PiPlusOne['0'], triangle.base.PiPlusOne['1'], triangle.base.PiPlusOne['2'])
                 ];
                 return (
-                  <Triangle type="base" vertices={baseVertices} />
+                  <Triangle key={_.uniqueId()} type="base" vertices={baseVertices} />
                 );
               }) : ('Треугольников нет')
           }
