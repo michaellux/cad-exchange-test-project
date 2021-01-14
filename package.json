@@ -13,10 +13,19 @@
   "author": "Sandeep Raveesh",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@react-three/drei": "^2.2.15",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
-    "express": "^4.16.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "randomcolor": "^0.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-preloaders": "^3.0.3",
+    "react-three-fiber": "^5.3.13",
+    "three": "^0.124.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
