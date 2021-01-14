@@ -3,7 +3,6 @@
 /* eslint-disable react/prop-types */
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-import './app.css';
 import {
   Grid, TextField, Button, Typography
 } from '@material-ui/core';
@@ -24,6 +23,11 @@ const useStyles = makeStyles(theme => ({
       width: '25ch',
     },
   },
+
+  container: {
+    height: '100vh'
+  },
+
   params: {
     display: 'grid'
   }
@@ -105,7 +109,7 @@ export default function App() {
 
   return (
     <Fragment>
-      <Grid container>
+      <Grid container className={classes.container}>
         <Grid item xs={3} sm={3}>
           <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
             <div className={classes.params}>
