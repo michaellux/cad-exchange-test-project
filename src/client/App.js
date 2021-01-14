@@ -33,53 +33,55 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Scene = (props) => {
-  const { triangles } = props;
-  console.log(triangles);
+class Scene extends React.PureComponent {
+  render() {
+    const { triangles } = this.props;
+    console.log(triangles);
 
-  return (
-    <Canvas
-      pixelRatio={window.devicePixelRatio}
-      camera={{
-        position: [20, 10, -10, 1000]
-      }}
-    >
-      <>
-        {
-          (triangles !== undefined)
-            && Array.isArray(triangles.triangleCoords)
-            ? triangles.triangleCoords.map((triangle) => {
-              const conicalSurfaceVertices = [
-                new THREE.Vector3(triangle.conicalSurface.A['0'], triangle.conicalSurface.A['1'], triangle.conicalSurface.A['2']),
-                new THREE.Vector3(triangle.conicalSurface.Pi['0'], triangle.conicalSurface.Pi['1'], triangle.conicalSurface.Pi['2']),
-                new THREE.Vector3(triangle.conicalSurface.PiPlusOne['0'], triangle.conicalSurface.PiPlusOne['1'], triangle.conicalSurface.PiPlusOne['2'])
-              ];
-              return (
-                <Triangle type="conicalSurface" vertices={conicalSurfaceVertices} />
-              );
-            }) : ('Треугольников нет')
-        }
-        {
-          (triangles !== undefined)
-            && Array.isArray(triangles.triangleCoords)
-            ? triangles.triangleCoords.map((triangle) => {
-              const baseVertices = [
-                new THREE.Vector3(triangle.base.Zero['0'], triangle.base.Zero['1'], triangle.base.Zero['2']),
-                new THREE.Vector3(triangle.base.Pi['0'], triangle.base.Pi['1'], triangle.base.Pi['2']),
-                new THREE.Vector3(triangle.base.PiPlusOne['0'], triangle.base.PiPlusOne['1'], triangle.base.PiPlusOne['2'])
-              ];
-              return (
-                <Triangle type="base" vertices={baseVertices} />
-              );
-            }) : ('Треугольников нет')
-        }
-      </>
+    return (
+      <Canvas
+        pixelRatio={window.devicePixelRatio}
+        camera={{
+          position: [20, 10, -10, 1000]
+        }}
+      >
+        <>
+          {
+            (triangles !== undefined)
+              && Array.isArray(triangles.triangleCoords)
+              ? triangles.triangleCoords.map((triangle) => {
+                const conicalSurfaceVertices = [
+                  new THREE.Vector3(triangle.conicalSurface.A['0'], triangle.conicalSurface.A['1'], triangle.conicalSurface.A['2']),
+                  new THREE.Vector3(triangle.conicalSurface.Pi['0'], triangle.conicalSurface.Pi['1'], triangle.conicalSurface.Pi['2']),
+                  new THREE.Vector3(triangle.conicalSurface.PiPlusOne['0'], triangle.conicalSurface.PiPlusOne['1'], triangle.conicalSurface.PiPlusOne['2'])
+                ];
+                return (
+                  <Triangle type="conicalSurface" vertices={conicalSurfaceVertices} />
+                );
+              }) : ('Треугольников нет')
+          }
+          {
+            (triangles !== undefined)
+              && Array.isArray(triangles.triangleCoords)
+              ? triangles.triangleCoords.map((triangle) => {
+                const baseVertices = [
+                  new THREE.Vector3(triangle.base.Zero['0'], triangle.base.Zero['1'], triangle.base.Zero['2']),
+                  new THREE.Vector3(triangle.base.Pi['0'], triangle.base.Pi['1'], triangle.base.Pi['2']),
+                  new THREE.Vector3(triangle.base.PiPlusOne['0'], triangle.base.PiPlusOne['1'], triangle.base.PiPlusOne['2'])
+                ];
+                return (
+                  <Triangle type="base" vertices={baseVertices} />
+                );
+              }) : ('Треугольников нет')
+          }
+        </>
 
-      <GridHelper />
-      <OrbitControls />
-    </Canvas>
-  );
-};
+        <GridHelper />
+        <OrbitControls />
+      </Canvas>
+    );
+  }
+}
 
 Scene.defaultProps = { triangles: {} };
 
