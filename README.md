@@ -1,7 +1,7 @@
 # cad-exchange-test-project
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/996f7999507b41f198dac4e54ed71a56)](https://www.codacy.com/gh/michaellux/cad-exchange-test-project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaellux/cad-exchange-test-project&amp;utm_campaign=Badge_Grade)
 ## Task
-Create a simple client-server web application which can display a simple cone in a 3D view:
+Create a simple client-server web application which can display a simple cone in a 3D view.
 <img align="left" src="./cone.png">
 
 The application should provide the following functionality: 
