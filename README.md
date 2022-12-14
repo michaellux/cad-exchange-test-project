@@ -12,8 +12,11 @@ pass it back to the client.
 5. The client should display computed triangulation in a 3D view using WebGL (e.g. with the help of 
 the three.js library). 
 6. Make sure your implementation neither exposes memory leaks nor overutilizes CPU on repeated 
-usage. 
+usage.
+
 For back-end implementation we recommend using node.js (although you may choose any other alternative).
+
+## Solution
 
 ![Скриншот программы](./working_app.png)
 ### Project setup
